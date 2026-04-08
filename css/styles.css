@@ -1,0 +1,348 @@
+/* ============================================
+   MUSASHI LABS · Way of the Tutorial
+   Japanese Minimalism · Wabi-Sabi · Ink Aesthetic
+   ============================================ */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf7f2;  /* washi paper / rice paper */
+    color: #2b2520;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 2rem 1.5rem;
+}
+
+/* Japanese serif for headings */
+h1, h2, h3 {
+    font-family: 'Times New Roman', 'Noto Serif JP', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- NAVIGATION (The Way / 道) ---------- */
+nav {
+    text-align: right;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e2dcd2;
+}
+
+nav a {
+    color: #4a3f35;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    margin: 0 0.25rem;
+}
+
+nav a:hover {
+    color: #bc4a2c;  /* vermilion — like a sword slash */
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+/* The pipe separators become subtle */
+nav {
+    color: #d4ccc2;
+}
+
+/* ---------- TYPOGRAPHY & SPACING (MA - 間) ---------- */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #bc4a2c;
+    padding-left: 1rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    max-width: 680px;
+    color: #3a322a;
+}
+
+/* ---------- LINKS (Direct strikes) ---------- */
+a {
+    color: #bc4a2c;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+a:hover {
+    border-bottom-color: #bc4a2c;
+}
+
+/* ---------- HOME PAGE SPECIFIC ---------- */
+/* The "Website Progress" section becomes a subtle ink-brush list */
+h2 + p, h2 + a {
+    margin-left: 1rem;
+}
+
+/* Add a subtle ensō (ink circle) behind the first heading */
+body > h1 {
+    position: relative;
+    display: inline-block;
+}
+
+body > h1::before {
+    content: "◯";
+    font-size: 8rem;
+    color: #bc4a2c;
+    opacity: 0.08;
+    position: absolute;
+    left: -2rem;
+    top: -1rem;
+    z-index: -1;
+    font-family: serif;
+}
+
+/* ---------- ABOUT PAGE (if you add content) ---------- */
+/* Will work automatically when about.html exists */
+
+/* ---------- GALLERY PAGE ---------- */
+/* If your gallery.html has images or cards, they'll inherit clean spacing */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    filter: grayscale(10%);
+    transition: filter 0.3s;
+}
+
+img:hover {
+    filter: grayscale(0%);
+}
+
+/* Simple card style you can use in gallery.html */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    background: #ffffffcc;
+    border: 1px solid #e2dcd2;
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    border-color: #bc4a2c;
+}
+
+.gallery-item h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.3rem;
+}
+
+.gallery-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* ---------- FOOTER (optional, add if you want) ---------- */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #8f7e6b;
+    border-top: 1px solid #e2dcd2;
+}
+
+/* ---------- RESPONSIVE (Mobile) ---------- */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    nav {
+        text-align: center;
+    }
+    
+    h1::before {
+        font-size: 5rem;
+        left: -1rem;
+        top: -0.5rem;
+    }
+}
+
+/* ============================================
+   GALLERY PAGE SPECIFIC STYLES
+   ============================================ */
+
+.gallery-subhead {
+    color: #6b5a4a;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    border-left: 2px solid #e2dcd2;
+    padding-left: 1rem;
+}
+
+/* Grid layout — automatically wraps, add as many images as you want */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+/* Each gallery item is like a scroll */
+.gallery-item {
+    background: #ffffffd9;
+    border: 1px solid #e2dcd2;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    border-color: #bc4a2c;
+    box-shadow: 0 12px 24px -16px rgba(0, 0, 0, 0.15);
+}
+
+/* Images inside gallery */
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;  /* Ensures all images fit neatly */
+    display: block;
+    filter: grayscale(15%) contrast(1.02);
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%) contrast(1.05);
+}
+
+/* Image captions */
+.image-caption {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    color: #6b5a4a;
+    letter-spacing: 0.03em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    border-top: 1px dashed #e2dcd2;
+    padding-top: 0.5rem;
+}
+
+/* Gallery note (void message) */
+.gallery-note {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f0ebe3;
+    border-left: 3px solid #bc4a2c;
+    font-size: 0.85rem;
+    color: #5a4a3a;
+}
+
+.gallery-note p {
+    margin: 0;
+    max-width: 100%;
+}
+
+/* ============================================
+   LIGHTBOX (click to enlarge image)
+   ============================================ */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border: 2px solid #bc4a2c;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: #faf7f2;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #faf7f2;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-lightbox:hover {
+    color: #bc4a2c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.25rem;
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .close-lightbox {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}

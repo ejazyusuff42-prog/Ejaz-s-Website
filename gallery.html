@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery · Musashi Labs</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <h1>Gallery of Forms</h1>
+    <p class="gallery-subhead">Each image holds a technique. Click to study closer.</p>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/pic1.webp" alt="Image 1">
+            <p class="image-caption">Ground stance · Foundation</p>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="images/pic2.webp" alt="Image 2">
+            <p class="image-caption">Water flow · Adaptation</p>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="images/pic3.PNG" alt="Image 3">
+            <p class="image-caption">Fire spirit · Intensity</p>
+        </div>
+        
+        <!-- You can add more here! Just copy the block above -->
+        <!-- 
+        <div class="gallery-item">
+            <img src="images/pic4.jpg" alt="Image 4">
+            <p class="image-caption">Wind · Invisible technique</p>
+        </div>
+        -->
+    </div>
+
+    <div class="gallery-note">
+        <p>〆 — The void awaits more images. Add freely.</p>
+    </div>
+
+    <footer>
+        <small>見極める — "To see clearly and cut precisely"</small>
+    </footer>
+
+    <!-- Simple lightbox script (click image to enlarge) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <script>
+        // Lightbox functionality - click any image to view larger
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                const caption = img.closest('.gallery-item').querySelector('.image-caption');
+                lightboxCaption.textContent = caption ? caption.textContent : 'Untitled technique';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
